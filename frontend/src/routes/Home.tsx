@@ -7,10 +7,7 @@ export default function Home(){
             <h1>Home</h1>
             <ul className="NavList">
                 <li>
-                    <Link to='/searchregisteredexchange'>등록 거래소 조회하기</Link>
-                </li>
-                <li>
-                    <Link to='/searchunregisteredexchange'>미등록 거래소 조회하기</Link>
+                    <Link to='/searchprovider'>거래소 조회하기</Link>
                 </li>
                 <li>
                     <Link to='/report'>신고하기</Link>

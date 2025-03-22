@@ -18,7 +18,7 @@ export const useNotices = () => {
             .then((data) => setNotices(data))
             .catch((error) => {
                 console.error("공지사항 로딩 실패:", error);
-                setNotices([]); // 에러 발생 시 빈 배열로 처리
+                setNotices([]);
             });
     }, []);
 

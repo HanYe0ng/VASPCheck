@@ -33,13 +33,7 @@ export const useProviderDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             const [provRes, typeRes, relRes] = await Promise.all([
-                fetch('/data/providers.json')
-                    .then(res => {
-                        if (!res.ok) {
-                            throw new Error(`HTTP error! Status: ${res.status}`);
-                        }
-                        return res.json();
-                    }),
+                fetch('/data/providers.json').then(res => res.json()),
                 fetch('/data/businessTypes.json').then(res => res.json()),
                 fetch('/data/providersBusinessTypes.json').then(res => res.json()),
             ]);
