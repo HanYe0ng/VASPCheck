@@ -1,8 +1,9 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from './routes/Home'
 import SearchRegisteredExchange from './routes/SearchRegisteredExchange'
 import SearchUnregisteredExchange from "./routes/SearchUnregisteredExchange";
+import ProviderResult from "./routes/ProviderResult";
 import Report from "./routes/Report";
 import Header from "./components/main/Header";
 import Setting from "./routes/Setting";
@@ -16,8 +17,9 @@ function App() {
               <Routes>
                   <Route path='/' element={<Home />}/>
                   <Route path='/setting' element={<Setting />}/>
-                  <Route path='/SearchRegisteredExchange' element={<SearchRegisteredExchange />}/>
-                  <Route path='/SearchUnregisteredExchange' element={<SearchUnregisteredExchange />}/>
+                  <Route path='/searchregisteredexchange' element={<SearchRegisteredExchange />}/>
+                  <Route path='/searchunregisteredexchange' element={<SearchUnregisteredExchange />}/>
+                  <Route path='/providerresult/:id' element={<ProviderResult/>}/>
                   <Route path='/report' element={<Report />}/>
                   <Route path='/notification' element={<Notification />}/>
               </Routes>

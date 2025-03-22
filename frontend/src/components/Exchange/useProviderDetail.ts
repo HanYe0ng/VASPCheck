@@ -15,23 +15,41 @@ export interface Provider {
     isReport: boolean;
 }
 
-export const useProviderDetail = (id: number) => {
-    const [provider, setProvider] = useState<Provider | null>(null);
-    const [loading, setLoading] = useState(true);
+export interface BusinessTypes{
+    id: number;
+    typeName: string;
+}
+
+export interface ProviderBusinessTypes{
+    provider_id: number;
+    business_type_id: number;
+}
+
+export const useProviderDetail = () => {
+    const [provider, setProvider] = useState<Provider[]>([]);
+    const [businessTypes, setBusinessTypes] = useState<BusinessTypes[]>([]);
+    const [relations, setRelations] = useState<ProviderBusinessTypes[]>([]);
 
     useEffect(() => {
-        fetch('/data/providers.json')
-            .then(res => res.json())
-            .then((data: Provider[]) => {
-                const found = data.find(p => p.id === id);
-                setProvider(found || null);
-            })
-            .catch(err => {
-                console.error("데이터 로딩 실패:", err);
-                setProvider(null);
-            })
-            .finally(() => setLoading(false));
-    }, [id]);
+        const fetchData = async () => {
+            const [provRes, typeRes, relRes] = await Promise.all([
+                fetch('/data/providers.json')
+                    .then(res => {
+                        if (!res.ok) {
+                            throw new Error(`HTTP error! Status: ${res.status}`);
+                        }
+                        return res.json();
+                    }),
+                fetch('/data/businessTypes.json').then(res => res.json()),
+                fetch('/data/providersBusinessTypes.json').then(res => res.json()),
+            ]);
+            setProvider(provRes);
+            setBusinessTypes(typeRes);
+            setRelations(relRes);
+        }
+        fetchData();
+    }, []);
 
-    return { provider, loading };
+    return { provider, businessTypes, relations };
 };
+

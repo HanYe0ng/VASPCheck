@@ -1,29 +1,22 @@
-interface Provider {
-    id: number;
-    serviceName: string;
-}
+import {useProviderDetail, Provider} from "./useProviderDetail";
+import {Link} from "react-router-dom"
 
-interface ListProps {
-    providers: Provider[];
-    onClick: (id: number) => void;
-}
+const ProviderList = () => {
 
-const ProviderList = ({ providers, onClick }: ListProps) => {
-    if (providers.length === 0) return <p>검색 결과가 없습니다.</p>;
+    const { provider, businessTypes, relations} = useProviderDetail();
+
+    if (!provider) return <p>등록된 거래소가 없습니다.</p>;
 
     return (
         <ul style={{ listStyle: 'none', padding: 0 }}>
-            {providers.map(p => (
-                <li
-                    key={p.id}
-                    style={{
-                        padding: '1rem',
-                        borderBottom: '1px solid #ccc',
-                        cursor: 'pointer'
-                    }}
-                    onClick={() => onClick(p.id)}
-                >
-                    {p.serviceName}
+            {provider.map((p: Provider) => (
+                <li key={p.id} style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+                    <Link
+                        to={`/providerresult/${p.id}`}
+                        state={{provider:p, businessTypes, relations}}
+                    >
+                        {p.serviceName}
+                    </Link>
                 </li>
             ))}
         </ul>
