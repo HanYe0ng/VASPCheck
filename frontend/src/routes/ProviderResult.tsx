@@ -1,11 +1,5 @@
 import {useLocation} from "react-router-dom";
 import {BusinessTypes, ProviderBusinessTypes} from "../components/Exchange/useProviderDetail";
-//
-// interface LocationState {
-//     provider: Provider[];
-//     businessTypes: BusinessTypes[];
-//     relations: ProviderBusinessTypes[];
-// }
 
 const ProviderResult = () => {
     const location = useLocation();
