@@ -17,7 +17,7 @@ public class BusinessTypeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 255)
+    @Column(length = 255, name = "type_name")
     private String typeName;
 
     // 양방향 매핑 (선택)

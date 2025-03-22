@@ -18,13 +18,13 @@ public class ProviderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false, length = 255, name = "service_name")
     private String serviceName;
 
-    @Column(length = 255)
+    @Column(length = 255, name = "corporation_name")
     private String corporationName;
 
-    @Column(length = 50)
+    @Column(length = 50, name = "business_registration_number")
     private String businessRegistrationNumber;
 
     @Column(length = 255)
@@ -36,16 +36,18 @@ public class ProviderEntity {
     @Column(length = 255)
     private String website;
 
-    @Column(length = 255)
+    @Column(length = 255, name = "contact_email")
     private String contactEmail;
 
+    @Column(name = "reported_date")
     private LocalDate reportedDate;  //로컬데이트가 시간없이 날짜만 넣는용
 
+    @Column(name = "approval_date")
     private LocalDate approvalDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "isms_certified")
     private Boolean ismsCertified = false;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "is_reported")
     private Boolean isReported = false;
 }
