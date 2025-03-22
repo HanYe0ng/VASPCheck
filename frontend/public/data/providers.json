@@ -1,5 +1,4 @@
-{
-  "providers": [
+[
     {
       "id": 1,
       "serviceName": "업비트",
@@ -140,5 +139,4 @@
       "ismsCertified": false,
       "isReported": false
     }
-  ]
-}
+]
