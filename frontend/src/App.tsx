@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import Home from './routes/Home'
 import ProviderResult from "./routes/ProviderResult";
-import Report from "./routes/Report";
 import MainHeader from "./components/common/MainHeader";
 import SubHeader from "./components/common/SubHeader";
 import Setting from "./routes/Setting";
@@ -21,9 +20,8 @@ const AppRoutes = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/setting' element={<Setting />} />
                 <Route path='/searchprovider' element={<SearchProvider />} />
-                <Route path='/providerresult/:id' element={<ProviderResult />} />
+                <Route path='/providerresult/:code' element={<ProviderResult />} />
                 <Route path='/noresult' element={<NoResult />} />
-                <Route path='/report' element={<Report />} />
                 <Route path='/notification' element={<Notification />} />
             </Routes>
         </>

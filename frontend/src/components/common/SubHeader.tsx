@@ -11,7 +11,7 @@ const SubHeader = () => {
     const isMainPage = location.pathname === "/";
 
     const handleBackToMain = () => {
-        if (location.pathname.startsWith("/providerresult")){
+        if (location.pathname.startsWith("/providerresult") || location.pathname.startsWith("/noresult")) {
             navigate("/searchprovider");
         }else{
             navigate("/");

@@ -5,7 +5,7 @@ import {useState} from "react";
 const NotificationContent = () => {
     const notices = useNotices();
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 4;
+    const itemsPerPage = 3;
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentNotices = notices.slice(startIndex, startIndex + itemsPerPage);
@@ -17,7 +17,7 @@ const NotificationContent = () => {
             {currentNotices.map((n) => (
                 <div
                     key={n.id}
-                    className="bg-white shadow rounded-xl p-4 border border-gray-200"
+                    className="h-[180px] bg-white shadow rounded-xl p-4 border border-gray-200"
                 >
                     <h2 className="text-lg font-semibold text-gray-800 mb-2">{n.title}</h2>
 
