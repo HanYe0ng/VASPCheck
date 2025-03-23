@@ -1,5 +1,5 @@
 import {useLocation} from "react-router-dom";
-import {BusinessTypes, ProviderBusinessTypes} from "../components/Exchange/useProviderDetail";
+import {BusinessTypes, ProviderBusinessTypes} from "../components/provider/useProviderDetail";
 
 const ProviderResult = () => {
     const location = useLocation();

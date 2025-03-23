@@ -3,8 +3,8 @@ import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import Home from './routes/Home'
 import ProviderResult from "./routes/ProviderResult";
 import Report from "./routes/Report";
-import MainHeader from "./components/main/MainHeader";
-import SubHeader from "./components/main/SubHeader";
+import MainHeader from "./components/common/MainHeader";
+import SubHeader from "./components/common/SubHeader";
 import Setting from "./routes/Setting";
 import Notification from "./routes/Notification";
 import SearchProvider from "./routes/SearchProvider";

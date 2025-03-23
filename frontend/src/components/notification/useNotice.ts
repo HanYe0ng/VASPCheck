@@ -10,7 +10,7 @@ export interface Notice {
 }
 
 export const useNotices = () => {
-    const [notices, setNotices] = useState<Notice[] | null>(null);
+    const [notices, setNotices] = useState<Notice[]>([]);
 
     useEffect(() => {
         fetch('/data/notificationData.json')

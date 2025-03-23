@@ -8,7 +8,8 @@ interface SearchProps {
 
 const Search = ({ onSearch, providers }: SearchProps) => {
     const [searchTerm, setSearchTerm] = useState("");
-    const [isFocused, setIsFocused] = useState(false);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_isFocused, setIsFocused] = useState(false);
 
     const suggestions = providers.filter((p) =>
         p.serviceName.toLowerCase().includes(searchTerm.toLowerCase())
