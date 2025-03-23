@@ -1,49 +1,33 @@
 import { useEffect, useState } from "react";
 
-export interface Provider {
-    id: number;
+export interface ProviderDetail {
+    code: string;
+    message: string;
     serviceName: string;
     corporationName: string;
     businessRegistrationNumber: string;
     ceo: string;
     address: string;
     website: string;
-    contactEmail: string;
+    contactEmail: string | null;
     reportedDate: string;
-    approveDate: string;
+    approvalDate: string;
     ismsCertified: boolean;
-    isReport: boolean;
-}
-
-export interface BusinessTypes{
-    id: number;
-    typeName: string;
-}
-
-export interface ProviderBusinessTypes{
-    provider_id: number;
-    business_type_id: number;
+    reported: boolean;
+    businessTypeList: string[];
 }
 
 export const useProviderDetail = () => {
-    const [provider, setProvider] = useState<Provider[]>([]);
-    const [businessTypes, setBusinessTypes] = useState<BusinessTypes[]>([]);
-    const [relations, setRelations] = useState<ProviderBusinessTypes[]>([]);
+    const [providerDetail, setProviderDetail] = useState<ProviderDetail[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const [provRes, typeRes, relRes] = await Promise.all([
-                fetch('/data/providers.json').then(res => res.json()),
-                fetch('/data/businessTypes.json').then(res => res.json()),
-                fetch('/data/providersBusinessTypes.json').then(res => res.json()),
-            ]);
-            setProvider(provRes);
-            setBusinessTypes(typeRes);
-            setRelations(relRes);
+            const provRes = await fetch('/data/providerDetail.json').then(res => res.json());
+            setProviderDetail(provRes);
         }
         fetchData();
     }, []);
 
-    return { provider, businessTypes, relations };
+    return providerDetail;
 };
 

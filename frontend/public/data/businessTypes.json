@@ -1,7 +1,0 @@
-[
-  { "id": 1, "typeName": "가. 매도·매수" },
-  { "id": 2, "typeName": "나. 교환" },
-  { "id": 3, "typeName": "다. 이전" },
-  { "id": 4, "typeName": "라. 보관" },
-  { "id": 5, "typeName": "마. 기타" }
-]

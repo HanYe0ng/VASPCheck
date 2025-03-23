@@ -25,16 +25,16 @@ const Home = () => {
                     </div>
                 </Link>
 
-                <Link to="/report" className="mt-3 block">
+                <a href="https://www.fss.or.kr/fss/cvpl/virtlAstMst/forInsertAgreInvtFrud.do?menuNo=201130" className="mt-3 block">
                     <div className="bg-white shadow rounded-xl p-4 flex items-center justify-between">
-                        <WarningIcon className="text-2xl text-[#3E87B6] mr-3"/>
+                        <WarningIcon className="text-2xl text-[#3E87B6] mr-4"/>
                         <div className="flex-1">
                             <p className="font-semibold text-lg">신고하기</p>
                             <p className="text-gray-500 text-sm">가짜거래소를 신고해주세요</p>
                         </div>
                         <RightArrow className="text-2xl text-gray-400"/>
                     </div>
-                </Link>
+                </a>
             </div>
 
             <section>

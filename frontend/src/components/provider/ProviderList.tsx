@@ -1,23 +1,20 @@
-import {Provider, ProviderBusinessTypes, BusinessTypes} from "./useProviderDetail";
-import {Link} from "react-router-dom"
+import { ProviderDetail } from "./useProviderDetail";
+import { Link } from "react-router-dom";
 
-type ProviderListProps = {
-    providers: Provider[];
-    businessTypes: BusinessTypes[];
-    relations: ProviderBusinessTypes[];
-};
-
-const ProviderList = ({providers, businessTypes, relations}:ProviderListProps) => {
-
-    if (!providers) return <p>등록된 거래소가 없습니다.</p>;
+const ProviderList = ({ providerDetail }: { providerDetail: ProviderDetail[] }) => {
+    if (!providerDetail || providerDetail.length === 0) return <p className="text-gray-600">등록된 거래소가 없습니다.</p>;
 
     return (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-            {providers.map((p: Provider) => (
-                <li key={p.id} style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+        <ul className="space-y-4">
+            {providerDetail.map((p: ProviderDetail) => (
+                <li
+                    key={p.code}
+                    className="bg-white shadow rounded-lg p-4 border border-gray-200 hover:shadow-md transition"
+                >
                     <Link
-                        to={`/providerresult/${p.id}`}
-                        state={{provider:p, businessTypes, relations}}
+                        to={`/providerresult/${p.code}`}
+                        state={{ providerDetail: p }}
+                        className="text-blue-600 hover:underline text-lg font-semibold"
                     >
                         {p.serviceName}
                     </Link>
