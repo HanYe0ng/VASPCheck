@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fss.backend.service.ProviderService;
 import com.fss.backend.dto.response.vasp.GetProviderResponseDto;
+import com.fss.backend.dto.response.vasp.GetAllProviderResponseDto;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -25,6 +28,14 @@ public class ProviderController {
     ) {
         return providerService.getProvider(serviceName);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/all")
+    public ResponseEntity<? super GetAllProviderResponseDto> getAllProvider() {
+        System.out.println("컨트롤러넘오옴");
+        return providerService.getAllProvider();
+    }
+    
 
     
 }
