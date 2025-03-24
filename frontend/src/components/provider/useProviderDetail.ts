@@ -22,7 +22,7 @@ export const useProviderDetail = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const provRes = await fetch('/data/providerDetail.json').then(res => res.json());
+            const provRes = await fetch('/api/v1/providers').then(res => res.json());
             setProviderDetail(provRes);
         }
         fetchData();

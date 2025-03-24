@@ -8,10 +8,18 @@ const ProviderResult = () => {
 
     return (
         <div className="mt-20 ml-4 mr-4 bg-white p-6 rounded-xl shadow border border-gray-200 space-y-3">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                {providerDetail.serviceName} <span className="text-red-500 font-extrabold">X</span>
+            </h2>
+
+            <p className="text-sm text-gray-700 mb-2">
+                {providerDetail.serviceName}은(는) 등록된 거래소 입니다.
+            </p>
             <h2 className="text-2xl font-bold text-gray-800 mb-4">{providerDetail.serviceName}</h2>
 
             <p><span className="font-semibold text-gray-700">법인명:</span> {providerDetail.corporationName}</p>
-            <p><span className="font-semibold text-gray-700">사업자등록번호:</span> {providerDetail.businessRegistrationNumber}</p>
+            <p><span className="font-semibold text-gray-700">사업자등록번호:</span> {providerDetail.businessRegistrationNumber}
+            </p>
             <p><span className="font-semibold text-gray-700">대표자:</span> {providerDetail.ceo}</p>
             <p><span className="font-semibold text-gray-700">소재지:</span> {providerDetail.address}</p>
 

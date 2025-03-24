@@ -19,7 +19,7 @@ const NoResult = () => {
             </p>
 
             <a
-                href="https://www.google.com"
+                href="https://www.fss.or.kr/fss/cvpl/virtlAstMst/forInsertAgreInvtFrud.do?menuNo=201130"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-red-500 font-semibold hover:underline"
