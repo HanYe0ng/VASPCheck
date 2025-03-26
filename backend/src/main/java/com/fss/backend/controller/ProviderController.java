@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequestMapping("api/v1/providers")
 @RequiredArgsConstructor
+//@CrossOrigin(origins = "http://localhost:3000")
 public class ProviderController {
 
     private final ProviderService providerService;
@@ -29,13 +30,9 @@ public class ProviderController {
         return providerService.getProvider(serviceName);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
     public ResponseEntity<? super GetAllProviderResponseDto> getAllProvider() {
-        System.out.println("컨트롤러넘오옴");
+        System.out.println("컨트롤러넘어왔다");
         return providerService.getAllProvider();
     }
-    
-
-    
 }
