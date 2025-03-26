@@ -27,7 +27,7 @@ export const useProviderDetail = () => {
         }
         fetchData();
     }, []);
+    console.log(providerDetail);
 
     return providerDetail;
 };
-
