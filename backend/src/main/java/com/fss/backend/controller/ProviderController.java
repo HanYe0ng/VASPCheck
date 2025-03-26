@@ -11,14 +11,12 @@ import com.fss.backend.dto.response.vasp.GetAllProviderResponseDto;
 
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
 @RequestMapping("api/v1/providers")
 @RequiredArgsConstructor
-//@CrossOrigin(origins = "http://localhost:3000")
 public class ProviderController {
 
     private final ProviderService providerService;
