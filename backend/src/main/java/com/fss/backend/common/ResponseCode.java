@@ -8,7 +8,7 @@ public interface ResponseCode {
    String VALIDATION_FAILED = "VF";
    String DUPLICATE_EMAIL = "DE";
    String DUPLICATE_NICKNAME = "DN";
-   String DUPLICATE_TEL_NUMBER = "DT";
+   String NOT_EXISTED_NOTIFICATION = "NN";
    String NOT_EXISTED_PROVIDER = "NP";
 
    //401
