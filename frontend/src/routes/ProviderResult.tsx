@@ -78,10 +78,12 @@ const ProviderResult = () => {
                 )}
             </p>
 
-            <p>
-                <span className="font-semibold text-gray-700">비즈니스 유형:</span>{" "}
-                {providerDetail.businessTypeList.join(", ")}
-            </p>
+            <p className="font-semibold text-gray-700 mb-1">비즈니스 유형:</p>
+            <ul className="list-disc list-inside text-gray-900">
+            {providerDetail.businessTypeList.map((type: string, index: number) => (
+                <li key={index}>{type}</li>
+            ))}
+            </ul>
         </div>
     );
 };
