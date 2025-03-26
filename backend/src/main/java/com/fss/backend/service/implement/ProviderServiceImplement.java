@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.fss.backend.dto.response.ResponseDto;
+import com.fss.backend.dto.response.vasp.GetAllProviderResponseDto;
 import com.fss.backend.dto.response.vasp.GetProviderResponseDto;
 import com.fss.backend.entity.ProviderBusinessTypeEntity;
 import com.fss.backend.entity.ProviderEntity;
@@ -46,6 +47,18 @@ public class ProviderServiceImplement implements ProviderService{
         } catch (Exception e) {
             return ResponseDto.databaseError(); // 공통 에러 응답
         }
+    }
+
+    @Override
+    public ResponseEntity<? super GetAllProviderResponseDto> getAllProvider() {
+        System.out.println("요청은 넘어옴");
+        try {
+            List<ProviderEntity> providers = providerRepository.findAll();
+            return GetAllProviderResponseDto.success(providers);
+        } catch (Exception e) {
+            return ResponseDto.databaseError(); // 공통 DB 에러 처리
+        }
+               
     }
         
     
