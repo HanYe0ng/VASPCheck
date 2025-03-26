@@ -12,18 +12,16 @@ const ProviderList = ({ providerList }: ProviderListProps) => {
     return (
         <ul className="space-y-4">
             {providerList.map((p) => (
-                <li
+                <Link
                     key={p.serviceName}
-                    className="bg-white shadow rounded-lg p-4 border border-gray-200 hover:shadow-md transition"
+                    to={`/providerresult/${p.serviceName}`}
+                    state={{ serviceName: p.serviceName }}
+                    className="block bg-white shadow rounded-lg p-4 border border-gray-200 hover:shadow-md transition"
                 >
-                    <Link
-                        to={`/providerresult/${p.serviceName}`}
-                        state={{ serviceName: p.serviceName }}
-                        className="text-blue-600 hover:underline text-lg font-semibold"
-                    >
+                    <li className="text-blue-600 hover:underline text-lg font-semibold">
                         {p.serviceName}
-                    </Link>
-                </li>
+                    </li>
+                </Link>
             ))}
         </ul>
     );
