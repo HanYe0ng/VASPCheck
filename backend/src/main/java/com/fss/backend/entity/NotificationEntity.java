@@ -30,9 +30,10 @@ public class NotificationEntity {
     private String content;
 
     @CreationTimestamp //엔티티 최초 생성 시 자동으로 현재 시간 저장
-    @Column(updatable = false)
+    @Column(updatable = false, name = "created_at")
     private LocalDateTime createdAt;  // 생성일 (자동 생성)
 
     @UpdateTimestamp //엔티티가 변경될 때마다 자동으로 갱신
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;  // 수정일 (업데이트 시 자동 갱신)
 }
