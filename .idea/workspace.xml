@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="281e738e-96b0-4da7-97bc-2540c1462912" name="변경" comment="" />
+    <list default="true" id="281e738e-96b0-4da7-97bc-2540c1462912" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "git-widget-placeholder": "main 병합 중",
+    "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -170,7 +172,7 @@
       <workItem from="1742807555261" duration="1730000" />
       <workItem from="1742952443094" duration="74000" />
       <workItem from="1742952527339" duration="18258000" />
-      <workItem from="1742984124667" duration="302000" />
+      <workItem from="1742984124667" duration="788000" />
     </task>
     <servers />
   </component>
