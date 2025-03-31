@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {MdSearch, MdWarning, MdArrowForwardIos} from "react-icons/md";
-import { useNotices } from "../components/notification/useNotice";
+import { useNoticesAllDetail } from "../components/notification/useNotice";
 
 const asIconComponent = (Icon: any) => Icon as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
 
@@ -9,7 +9,7 @@ const WarningIcon = asIconComponent(MdWarning);
 const RightArrow = asIconComponent(MdArrowForwardIos);
 
 const Home = () => {
-    const notices = useNotices();
+    const notices = useNoticesAllDetail();
 
     return (
         <div className="bg-gray-50 p-4">
@@ -45,10 +45,10 @@ const Home = () => {
                 <ul className="space-y-2">
                     {notices && notices.length > 0 ? (
                         notices.map((n) => (
-                            <li key={n.id} className="flex justify-between text-sm text-gray-700">
+                            <li key={n.noticeId} className="flex justify-between text-sm text-gray-700">
                                 <span>{n.summary}</span>
                                 <span className="text-gray-400">
-                                    {new Date(n.createdAt).toLocaleDateString()}
+                                    {new Date(n.date).toLocaleDateString()}
                                 </span>
                             </li>
                         ))

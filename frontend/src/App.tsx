@@ -8,6 +8,7 @@ import Setting from "./routes/Setting";
 import Notification from "./routes/Notification";
 import SearchProvider from "./routes/SearchProvider";
 import NoResult from "./routes/NoResult";
+import NoticeResult from './routes/NoticeResult';
 
 const AppRoutes = () => {
     const location = useLocation();
@@ -23,6 +24,7 @@ const AppRoutes = () => {
                 <Route path='/providerresult/:serviceName' element={<ProviderResult />} />
                 <Route path='/noresult' element={<NoResult />} />
                 <Route path='/notification' element={<Notification />} />
+                <Route path='/noticeresult/:noticeId' element={<NoticeResult />} />
             </Routes>
         </>
     );

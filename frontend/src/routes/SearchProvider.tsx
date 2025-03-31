@@ -4,7 +4,7 @@ import ProviderList from "../components/provider/ProviderList";
 import { useNavigate } from "react-router-dom";
 import { useProviderAllDetail, ProviderDetail } from "../components/provider/useProviderDetail";
 import Pagination from '../components/common/Pagination';
-import { getProviderDetail } from "../components/provider/providerApi";
+import { getProviderDetail } from "../components/provider/getProviderDetail";
 
 const SearchProvider = () => {
     const providerList = useProviderAllDetail();
@@ -16,10 +16,15 @@ const SearchProvider = () => {
     const navigate = useNavigate();
 
     const handleSearch = async (term: string) => {
-        console.log("검색어:", term);
-        setSearchTerm(term);
+        const trimmedTerm = term.trim();
 
-        const providerDetail: ProviderDetail | null = await getProviderDetail(term);
+        if (!trimmedTerm) {
+            return;
+        }
+
+        setSearchTerm(trimmedTerm);
+
+        const providerDetail: ProviderDetail | null = await getProviderDetail(trimmedTerm);
 
         if (providerDetail && providerDetail.serviceName !== undefined) {
             navigate(`/providerresult/${providerDetail.serviceName}`, {
@@ -27,10 +32,11 @@ const SearchProvider = () => {
             });
         } else {
             navigate('/noresult', {
-                state: { searchTerm: term }
+                state: { searchTerm: trimmedTerm }
             });
         }
     };
+
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentProviders = providerList.slice(startIndex, startIndex + itemsPerPage);
