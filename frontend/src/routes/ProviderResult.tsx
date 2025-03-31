@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ProviderDetail } from "../components/provider/useProviderDetail";
-import { getProviderDetail } from "../components/provider/providerApi";
+import { getProviderDetail } from "../components/provider/getProviderDetail";
 
 const ProviderResult = () => {
     const { serviceName } = useParams<{ serviceName: string }>();

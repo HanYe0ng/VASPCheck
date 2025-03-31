@@ -13,7 +13,10 @@ const SubHeader = () => {
     const handleBackToMain = () => {
         if (location.pathname.startsWith("/providerresult") || location.pathname.startsWith("/noresult")) {
             navigate("/searchprovider");
-        }else{
+        }else if(location.pathname.startsWith("/noticeresult")){
+            navigate("/notification");
+        }
+        else{
             navigate("/");
         }
     };
